@@ -1,0 +1,5 @@
+What are the four main principles of OOP? 
+ Encapsulation → bundling data and methods together, hiding internal details.
+ Inheritance → deriving new classes from existing ones to reuse code.
+ Polymorphism → same method name behaves differently based on the object.
+ Abstraction → exposing only essential features, hiding complexities.
