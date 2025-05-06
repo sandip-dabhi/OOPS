@@ -1,0 +1,61 @@
+What is Polymorphism?
+Polymorphism literally means “many forms.”
+In OOP, it refers to an object’s ability to take multiple forms depending on the context.
+
+In simple terms:
+Same method name, different behavior depending on object or arguments.
+
+✅ Types of Polymorphism in Java:
+===================Compile-time Polymorphism (Method Overloading):=================
+Happens at compile time.
+Same method name, different parameter lists (number or type of parameters).
+Decided by the compiler which method to call.
+
+===============Example:==============
+
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+class Test {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println(calc.add(2, 3));        // Calls 2-arg version
+        System.out.println(calc.add(2, 3, 4));     // Calls 3-arg version
+    }
+}
+Both methods are named add, but behave differently based on arguments.
+==================2️⃣ Runtime Polymorphism (Method Overriding):==============================
+Happens at runtime.
+Child class overrides a method of parent class with the same signature.
+Method to be called is determined by actual object type, not reference type.
+
+============Example:===========
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Animal myAnimal = new Dog();  // Reference of parent, object of child
+        myAnimal.sound();  // Outputs: Dog barks
+    }
+}
+Although myAnimal is declared as Animal, the Dog’s version of sound() is called at runtime.
+
+================Why use Polymorphism?=====================
+ Write general code that works with different types of objects.
+ Supports extensibility and maintainability (add new classes without changing existing code).
+ Enables dynamic method invocation (behavior decided at runtime).
