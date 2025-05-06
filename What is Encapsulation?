@@ -1,0 +1,73 @@
+ What is Encapsulation?
+ Encapsulation means wrapping data (fields) and methods (functions) together into a single unit (class) and restricting direct access to the internal data.
+
+It’s like putting data inside a protective capsule so it can’t be accessed or modified directly from outside.
+
+================== Key Idea of Encapsulation:=================
+Data hiding + controlled access.
+
+External code can’t directly access internal variables—it must go through getters and setters (methods).
+
+=================== Why use Encapsulation?=======================
+ Protects object’s internal state from unintended changes.
+ Makes code more secure and robust.
+ Provides control over how data is accessed or updated.
+ Easier to maintain and update code.
+
+How to achieve Encapsulation in Java?
+Mark fields as private.
+
+Provide public getter and setter methods to access/modify them.
+
+==========Example:==============
+
+class Employee {
+    private String name;
+    private double salary;
+
+    // Getter method
+    public String getName() {
+        return name;
+    }
+
+    // Setter method
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double newSalary) {
+        if (newSalary > 0) { // validation inside setter
+            salary = newSalary;
+        } else {
+            System.out.println("Invalid salary!");
+        }
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+        emp.setName("Sandip");
+        emp.setSalary(50000);
+
+        System.out.println(emp.getName() + " earns " + emp.getSalary());
+    }
+}
+
+name and salary are private (cannot be accessed directly).
+Only allowed access through getName(), setName(), getSalary(), setSalary().
+We can add validation inside setters.
+
+=============Real-world analogy:==================
+Think of ATM access to your bank account.
+You can’t directly modify your balance inside the bank’s database—you interact through an ATM interface (methods).
+
+===================Benefits of Encapsulation:=====================
+Hides complexity from users.
+Gives controlled access to data.
+Prevents accidental data corruption.
+Easier to refactor code without breaking external code.
