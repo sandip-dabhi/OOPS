@@ -1,0 +1,50 @@
+What is Abstraction?
+Abstraction in OOP means hiding complex implementation details and showing only the essential features of an object.
+It allows you to work at a higher level without worrying about internal logic.
+
+==============Key Characteristics of Abstraction:============
+Focuses on “what an object does” rather than “how it does it.”
+Achieved using abstract classes and interfaces in Java.
+Helps reduce complexity and improves code maintainability.
+
+================Why use Abstraction?====================
+✔ Simplifies complex systems.
+✔ Makes code easier to modify or extend.
+✔ Protects internal data by hiding details.
+✔ Provides a clear separation between interface and implementation.
+
+How to Achieve Abstraction in Java?
+ ===================1. Using Abstract Classes:=======================
+An abstract class can have abstract methods (without body) and concrete methods (with body).
+
+abstract class Animal {
+    abstract void sound(); // abstract method
+    void eat() { // concrete method
+        System.out.println("Animal eats food.");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks.");
+    }
+}
+You can’t instantiate Animal directly—it’s just a blueprint.
+
+===========2. Using Interfaces:===================
+An interface specifies method signatures without implementation.
+interface Shape {
+    void draw();  // abstract method
+}
+
+class Circle implements Shape {
+    public void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+The user of Shape only cares about the draw() method, not how it’s drawn internally.
+
+===============Benefits of Abstraction===================
+Hides unnecessary details from users.
+Provides flexibility to change implementation without affecting users.
+Supports loose coupling and improves code extensibility.
