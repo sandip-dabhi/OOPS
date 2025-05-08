@@ -1,0 +1,40 @@
+What is Inheritance?
+Inheritance is the OOP concept where one class (child or subclass) inherits the properties and behaviors (fields and methods) of another class (parent or superclass).
+
+It allows:
+Code reuse (no need to rewrite common code).
+Establishing “is-a” relationships (e.g., a Dog is a type of Animal).
+
+===================== Key Features of Inheritance:===========================
+Reuse existing code from parent classes.
+Extend or override parent behavior in child classes.
+Create a hierarchical structure between classes.
+
+===============================Basic Syntax in Java:============================
+
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("The dog barks.");
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();  // Inherited from Animal
+        d.bark(); // Defined in Dog
+    }
+}
+
+
+========== Advantages of Inheritance==================
+ Code Reuse → avoid duplicating shared logic.
+ Extensibility → add new features by extending existing classes.
+ Maintainability → update the parent class, and changes reflect in child classes.
+
