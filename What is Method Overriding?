@@ -1,0 +1,24 @@
+What is Method Overriding?
+ Method Overriding happens when a child class provides its own version of a method already defined in the parent class.
+It is a type of runtime polymorphism.
+================ Example:==============
+
+class Animal {
+    void sound() {
+        System.out.println("Some generic animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        Animal a = new Dog();
+        a.sound();  // calls Dog's overridden sound() method
+    }
+}
