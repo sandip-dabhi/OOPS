@@ -1,0 +1,27 @@
+ What is the Difference Between Abstract Class and Interface?
+An abstract class can have both abstract and concrete methods.
+An interface has only abstract methods.
+
+=============Example with abstract class:==================
+
+abstract class Shape {
+    abstract void draw();  // Abstract method
+
+    void info() {          // Concrete method
+        System.out.println("This is a shape.");
+    }
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape s = new Circle();
+        s.draw();   // Output: Drawing a circle.
+        s.info();   // Output: This is a shape.
+    }
+}
