@@ -1,0 +1,21 @@
+ What is an Interface in OOP?
+An interface in Java defines a contract — only method signatures, no implementation (until Java 8, which introduced default methods).
+
+============Example:===================
+
+interface Animal {
+    void eat();
+}
+
+class Dog implements Animal {
+    public void eat() {
+        System.out.println("Dog eats bone.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        myDog.eat();  // Output: Dog eats bone.
+    }
+}
