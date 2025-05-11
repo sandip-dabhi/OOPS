@@ -1,0 +1,26 @@
+What is the 'this' Keyword in Java?
+The this keyword refers to the current object in a class. It's commonly used to:
+Refer to instance variables
+Call other constructors
+
+Pass the current object as a parameter
+
+===========Example:================
+
+class Book {
+    String title;
+
+    Book(String title) {
+        this.title = title;  // Refers to instance variable
+    }
+
+    void print() {
+        System.out.println("Book: " + this.title);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Book b = new Book("Java Basics");
+        b.print();  // Output: Book: Java Basics
+    }
+}
