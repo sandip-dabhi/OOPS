@@ -1,0 +1,18 @@
+What is a Final Class and Final Method in Java?
+A final class cannot be extended (i.e., no subclassing).
+
+A final method cannot be overridden.
+
+=========Example:==============
+
+final class Vehicle {
+    final void run() {
+        System.out.println("Vehicle is running");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Vehicle v = new Vehicle();
+        v.run();  // Output: Vehicle is running
+    }
+}
