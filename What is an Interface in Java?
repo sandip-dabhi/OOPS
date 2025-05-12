@@ -1,0 +1,21 @@
+What is an Interface in Java?
+An interface is a fully abstract type in Java — it can only contain abstract methods (until Java 7) and default/static methods (from Java 8 onwards).
+
+===============Example:===============
+
+interface Drawable {
+    void draw();  // abstract method
+}
+
+class Circle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing Circle");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Drawable d = new Circle();
+        d.draw();  // Output: Drawing Circle
+    }
+}
