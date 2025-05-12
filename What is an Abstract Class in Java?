@@ -1,0 +1,27 @@
+What is an Abstract Class in Java?
+An abstract class is a class that cannot be instantiated and may contain abstract methods (methods without implementation) and concrete methods (with implementation).
+
+=============Example:===============
+
+abstract class Animal {
+    abstract void makeSound();  // Abstract method
+
+    void sleep() {              // Concrete method
+        System.out.println("Sleeping...");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal a = new Cat();
+        a.makeSound();  // Output: Meow
+        a.sleep();      // Output: Sleeping...
+    }
+}
