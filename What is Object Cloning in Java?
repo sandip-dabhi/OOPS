@@ -1,0 +1,24 @@
+What is Object Cloning in Java?
+Object Cloning is the process of creating an exact copy of an object using the clone() method from the Object class.
+
+===============Example:================
+
+class Person implements Cloneable {
+    String name;
+
+    Person(String name) {
+        this.name = name;
+    }
+
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws CloneNotSupportedException {
+        Person p1 = new Person("Alice");
+        Person p2 = (Person) p1.clone();
+        System.out.println(p2.name);  // Output: Alice
+    }
+}
