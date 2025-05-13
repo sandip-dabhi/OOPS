@@ -1,0 +1,28 @@
+What is Aggregation in Java?
+Aggregation is a form of association that represents a "has-a" relationship, but with loose coupling. The contained object can exist independently of the container object.
+
+=========Example:===============
+
+class Address {
+    String city;
+    Address(String city) {
+        this.city = city;
+    }
+}
+
+class Student {
+    String name;
+    Address address;
+
+    Student(String name, Address address) {
+        this.name = name;
+        this.address = address;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Address addr = new Address("Mumbai");
+        Student s = new Student("Ravi", addr);
+        System.out.println(s.name + " lives in " + s.address.city);
+    }
+}
