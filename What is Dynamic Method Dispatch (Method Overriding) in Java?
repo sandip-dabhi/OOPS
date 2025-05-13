@@ -1,0 +1,41 @@
+What is Dynamic Method Dispatch (Method Overriding) in Java?
+Dynamic Method Dispatch refers to the mechanism in Java where the method that gets called is determined at runtime based on the object type. This is related to method overriding and is a core concept of polymorphism.
+
+==============How it Works:===================
+Parent class defines a method.
+
+Child class overrides the method.
+
+The method called depends on the object's actual type (not the reference type).
+
+===============Example:===============
+
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal animal1 = new Dog(); // Animal reference, Dog object
+        Animal animal2 = new Cat(); // Animal reference, Cat object
+
+        animal1.sound();  // Output: Dog barks
+        animal2.sound();  // Output: Cat meows
+    }
+}
