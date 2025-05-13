@@ -1,0 +1,32 @@
+What is Composition in Java?
+Composition is a design principle in OOP where one class contains an object of another class and delegates responsibilities to the included object.
+
+It's a "has-a" relationship and is stronger than aggregation — the composed object cannot exist independently of the parent.
+
+===================Example================
+
+class Engine {
+    void start() {
+        System.out.println("Engine started");
+    }
+}
+
+class Car {
+    private Engine engine;
+
+    Car() {
+        engine = new Engine();  // Composition: Engine is part of Car
+    }
+
+    void drive() {
+        engine.start();
+        System.out.println("Car is driving");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.drive();
+    }
+}
