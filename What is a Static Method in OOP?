@@ -1,0 +1,17 @@
+What is a Static Method in OOP?
+A static method belongs to the class rather than the instance (object). It can be called without creating an object of the class.
+
+========Example:==============
+t
+class MathUtil {
+    static int square(int x) {
+        return x * x;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int result = MathUtil.square(5);
+        System.out.println(result);  // Output: 25
+    }
+}
