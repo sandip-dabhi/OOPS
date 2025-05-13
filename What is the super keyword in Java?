@@ -1,0 +1,36 @@
+What is the super keyword in Java?
+The super keyword is used to refer to the parent class. It can:
+
+Call the parent class constructor
+
+Access parent class methods/variables
+
+==================Example:================
+
+class Animal {
+    String type = "Animal";
+    void sound() {
+        System.out.println("Generic sound");
+    }
+}
+
+class Dog extends Animal {
+    String type = "Dog";
+
+    void printType() {
+        System.out.println(super.type); // refers to parent class variable
+    }
+
+    void sound() {
+        super.sound(); // calls parent class method
+        System.out.println("Bark");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.printType(); // Animal
+        dog.sound();     // Generic sound \n Bark
+    }
+}
