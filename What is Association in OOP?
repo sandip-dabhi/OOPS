@@ -1,0 +1,29 @@
+What is Association in OOP?
+Association represents a relationship between two separate classes that are established through their objects.
+Types: One-to-One, One-to-Many, Many-to-One, Many-to-Many.
+
+=============Example:==================
+class Teacher {
+    String name;
+    Teacher(String name) {
+        this.name = name;
+    }
+}
+
+class Department {
+    String deptName;
+    Teacher teacher;
+
+    Department(String deptName, Teacher teacher) {
+        this.deptName = deptName;
+        this.teacher = teacher;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Teacher t = new Teacher("Dr. Smith");
+        Department d = new Department("Physics", t);
+        System.out.println(d.teacher.name);  // Output: Dr. Smith
+    }
+}
